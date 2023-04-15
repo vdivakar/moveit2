@@ -44,22 +44,14 @@ namespace collision_detection
 void getCostMarkers(visualization_msgs::msg::MarkerArray& arr, const std::string& frame_id,
                     std::set<CostSource>& cost_sources)
 {
-  std_msgs::msg::ColorRGBA color;
-  color.r = 1.0f;
-  color.g = 0.5f;
-  color.b = 0.0f;
-  color.a = 0.4f;
+  std_msgs::msg::ColorRGBA color {1.0f, 0.5f, 0.0f, 0.4f};
   getCostMarkers(arr, frame_id, cost_sources, color, rclcpp::Duration(60, 0));
 }
 
 void getCollisionMarkersFromContacts(visualization_msgs::msg::MarkerArray& arr, const std::string& frame_id,
                                      const CollisionResult::ContactMap& con)
 {
-  std_msgs::msg::ColorRGBA color;
-  color.r = 1.0f;
-  color.g = 0.0f;
-  color.b = 0.0f;
-  color.a = 0.8f;
+  std_msgs::msg::ColorRGBA color {1.0f, 0.0f, 0.0f, 0.8f};
   getCollisionMarkersFromContacts(arr, frame_id, con, color, rclcpp::Duration(60, 0));
 }
 
